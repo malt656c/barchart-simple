@@ -1,0 +1,28 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  /* styling for vores barcharts "boks", sætter en fast bredde for at undgå at det hele danser rundt i starten */
+ul {
+  list-style: none;
+  display: flex;
+  align-items: flex-end;
+  gap: 1ch;
+  width: calc(4ch*20);
+}
+
+li {
+  inline-size: 3ch;
+  /* blander rød og grøn sammen baseret på vores "height" property vi laver i js */
+  background: color-mix(in hsl, red, green calc(var(--height) * 1%));
+  /* sætter højden af vores bars til at være vores "height property" pixels høj */
+  height: calc(var(--height)*1px);
+}
+/* får vores body til at fylde hele skærmen og centrerer vores indhold på siden */
+body {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
